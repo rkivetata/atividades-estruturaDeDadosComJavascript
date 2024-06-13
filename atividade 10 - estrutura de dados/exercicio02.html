@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Escolha no menu a operação desejada</h1>
+
+    <ul>
+        <li>
+            <h2>Opção um</h2>
+            <button type="button" onclick=imposto()>Imposto</button>
+        </li>
+
+        <li>
+            <h2>Opção dois</h2>
+            <button type="button" onclick=novoSalario()>Novo Salário</button>
+        </li>
+
+        <li>
+            <h3>Opção três</h3>
+            <button type="button" onclick=classificação()>Classificação</button>
+        </li>
+    </ul>
+
+    <script>
+//CÓDIGO DA OPÇÃO UM - AO RECEBER SALÁRIO CALCULA E MOSTRA O VALOR DO IMPOSTO SEGUNDO AS REGRAS
+    
+    function imposto(){
+        var salario = parseFloat(prompt("Qual é o seu salário?")); 
+
+        if (salario< 500) {
+            var percentualImposto = 5 / 100;
+            var impostoDoSalario = percentualImposto * salario;
+            var salarioComImposto = salario - impostoDoSalario;
+            alert(`Seu salário atual é de R$${salario}. O percentual de imposto no seu salário é de 5%. O valor do imposto do seu salário é R$${impostoDoSalario}. O total do seu salário com o imposto é R$${salarioComImposto}`);
+        } 
+
+        if ((salario >= 500) && (salario <=850)) { 
+            var percentualImposto = 10 / 100;
+            var impostoDoSalario = percentualImposto * salario;
+            var salarioComImposto = salario - impostoDoSalario;
+            alert(`Seu salário atual é de R$${salario}. O percentual de imposto no seu salário é de 10%. O valor do imposto do seu salário é R$${impostoDoSalario}. O total do seu salário com o imposto é R$${salarioComImposto}`); 
+    }
+
+        if (salario>850) {
+            var percentualImposto = 15 / 100;
+            var impostoDoSalario = percentualImposto * salario;
+            var salarioComImposto = salario - impostoDoSalario;
+            alert(`Seu salário atual é de R$${salario}. O percentual de imposto no seu salário é de 15%. O valor do imposto do seu salário é R$${impostoDoSalario}. O total do seu salário com o imposto é R$${salarioComImposto}`); 
+            }
+        }
+
+        
+//CODIGO DA OPÇÃO DOIS - CALCULAR NOVO SALARIO
+
+    function novoSalario() {
+        var salario = parseFloat(prompt("Qual é o seu salário?")); 
+        
+        if (salario > 1500) {
+            var aumento = 25;
+            salarioComAumento = salario + aumento;
+            alert(`Seu salário é de R$${salario}. Seu aumento é de R$25,00. Seu salário atual é de R$${salarioComAumento}`);
+        }
+
+        if ((salario >= 750) && (salario <=1500)) {
+            var aumento = 50;
+            salarioComAumento = salario + aumento;
+            alert(`Seu salário é de R$${salario}. Seu aumento é de R$50,00. Seu salário atual é de R$${salarioComAumento}`);
+        }
+
+        if ((salario >= 450) && (salario <750)) {
+            var aumento = 75;
+            salarioComAumento = salario + aumento;
+            alert(`Seu salário é de R$${salario}. Seu aumento é de R$75,00. Seu salário atual é de R$${salarioComAumento}`);
+        }
+
+        if (salario < 450) {
+            var aumento = 100;
+            salarioComAumento = salario + aumento;
+            alert(`Seu salário é de R$${salario}. Seu aumento é de R$100,00. Seu salário atual é de R$${salarioComAumento}`);
+        }
+    }
+
+//CÓDIGO DA OPÇÃO TRÊS - MOSTRAR A CLASSIFICAÇÃO DO SALÁRIO DO USUÁRIO
+
+    function classificação() {
+      var salario = parseFloat(prompt("Qual é sua faixa salárial?"));
+      
+      if (salario <= 700) {
+        alert(`Sua classificação de salário é 'Mal remunerado'`);
+      } else {
+        alert(`Sua classificação de salário é 'Bem remunerado'`);
+      }
+    }
+    </script>
+</body>
+</html>

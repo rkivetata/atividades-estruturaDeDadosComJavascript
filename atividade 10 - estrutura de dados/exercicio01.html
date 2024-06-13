@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+
+    <h1 id="aviso"></h1>
+
+    <button onclick="cotacao()">Começar cotação de salário</button>
+
+    <script>
+        var escrituario = 50 /100;
+        var secretaria = 35 /100;
+        var caixa = 20 / 100;
+        var gerente = 10 / 100;
+
+//VERIFICAÇÃO DA PORCENTAGEM DE CADA SALARIO
+        console.log(escrituario);
+        console.log(secretaria);
+        console.log(caixa);
+        console.log(gerente);
+
+function cotacao(){
+    let cargo = prompt("Qual é o seu cargo");
+    console.log(cargo);
+
+    if (cargo == ""){
+            aviso.innerHTML = "Informe seu cargo.";
+        } else if (cargo == "Diretor"){
+            var salarioDireto = parseFloat(prompt("Olá, diretor! Qual é o seu salário?"));
+            alert(`Seu salário não teve reajuste, permanecendo no valor de R$${salarioDireto}`);
+        } else if (cargo == "Escrituário") {
+             var salarioEscrituarioAtual = parseFloat(prompt("Olá! qual é o seu salário?"));
+             var percentualSalarioEscrituario = salarioEscrituarioAtual * escrituario;
+             var salarioEscrituario = percentualSalarioEscrituario + salarioEscrituarioAtual;
+             alert(`Seu salário teve um reajuste de 50%, ficando R$${salarioEscrituario} no total`);
+        } else if (cargo == "Caixa") {
+            var salarioCaixaAtual = parseFloat(prompt("Olá! qual é o seu salário?"));
+            var percentualSalarioCaixa = salarioCaixaAtual * caixa;
+            var salarioCaixa = percentualSalarioCaixa + salarioCaixaAtual;
+             alert(`Seu salário teve um reajuste de 20%, ficando R$${salarioCaixa} no total`);
+        } else if (cargo == "Secretária") {
+            var salarioSecretariaAtual = parseFloat(prompt("Olá! qual é o seu salário?"));
+            var percentualSalarioSecretaria = salarioSecretariaAtual * secretaria;
+            var salarioSecretaria = percentualSalarioSecretaria + salarioSecretariaAtual;
+             alert(`Seu salário teve um reajuste de 35%, ficando R$${salarioSecretaria} no total`);
+        } else if (cargo == "Gerente"){
+            var salarioGerenteAtual = parseFloat(prompt("Olá! qual é o seu salário?"));
+            var percentualSalarioGerente = salarioGerenteAtual * gerente;
+            var salarioGerente = percentualSalarioGerente + salarioGerenteAtual;
+             alert(`Seu salário teve um reajuste de 10%, ficando R$${salarioGerente} no total`);
+        }
+        else {
+            alert(`Finalizado`);
+        }
+}
+
+    
+
+       
+
+    </script>
+</body>
+</html>
